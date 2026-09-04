@@ -4,7 +4,7 @@ export default function Hero() {
       <div>
         <h1>Build faster with AI</h1>
         <p>Simple test project for the LVB Agent.</p>
-        <button>Start now</button>
+        <button>Começar agora</button>
       </div>
     </section>
   );
