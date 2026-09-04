@@ -44,30 +44,13 @@ export default function Hero() {
               <span className="text-zinc-500">· 10k+ times</span>
             </div>
           </div>
-          <div className="relative">
-            <div className="rounded-[20px] border border-white/10 bg-zinc-900 p-2 shadow-2xl">
-              <div className="overflow-hidden rounded-[14px] border border-white/5 bg-[#0f0f11]">
-                <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                  <div className="flex gap-1.5">
-                    <span className="h-3 w-3 rounded-full bg-red-500/80" />
-                    <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
-                    <span className="h-3 w-3 rounded-full bg-green-500/80" />
-                  </div>
-                  <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-zinc-500">lvb-agent.live • online</span>
-                </div>
-                <div className="space-y-3 p-4">
-                  <div className="flex gap-2">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-violet-600 text-xs font-bold">AI</span>
-                    <p className="rounded-2xl rounded-tl-sm border border-white/5 bg-zinc-900 px-3 py-2 text-sm text-zinc-300">Criei o Hero premium com gradientes e glassmorphism ✨</p>
-                  </div>
-                  <p className="ml-auto max-w-[75%] rounded-2xl rounded-tr-sm bg-white px-3 py-2 text-sm font-medium text-black">Perfeito! Tema dark com violeta</p>
-                  <div className="rounded-xl border border-violet-500/20 bg-violet-500/10 p-3">
-                    <div className="flex justify-between text-xs text-violet-300"><span>● Gerando design...</span><span>78%</span></div>
-                    <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-violet-950"><div className="h-full w-[78%] rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500" /></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="relative flex items-center justify-center lg:justify-end">
+            <div className="absolute -inset-4 bg-gradient-to-br from-violet-600/20 via-fuchsia-500/15 to-transparent blur-2xl rounded-[32px]" />
+            <img
+              src="/uploads/CT-01.png"
+              alt="CT-01"
+              className="relative w-full max-w-[480px] h-auto rounded-[20px] border border-white/10 shadow-2xl object-cover"
+            />
           </div>
         </div>
       </div>
