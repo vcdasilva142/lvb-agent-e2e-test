@@ -30,7 +30,7 @@ export default function Hero() {
               <span className="text-zinc-100"> Do protótipo ao deploy em minutos.</span>
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <button className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-black shadow-lg transition hover:bg-zinc-100">Começar agora →</button>
+              <button className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-black shadow-lg transition hover:bg-zinc-100">Start now</button>
               <button className="rounded-full border border-white/10 bg-white/5 px-7 py-3 text-sm font-semibold backdrop-blur hover:bg-white/10 transition">Ver demonstração</button>
             </div>
             <div className="mt-8 flex items-center gap-3 border-t border-white/5 pt-6 text-sm">
