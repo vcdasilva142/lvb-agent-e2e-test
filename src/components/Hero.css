@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Hero
+   Mobile-first: uma coluna no celular; texto + imagem lado a lado em
+   telas largas. Cores e tipografia definidas em escala, uma única vez,
+   através das variáveis abaixo (item 6).
+   ========================================================================== */
+
+.hero {
+  /* Paleta (item 6) */
+  --hero-color-bg-1: #eef2ff;
+  --hero-color-bg-2: #e0e7ff;
+  --hero-color-primary: #4f46e5;
+  --hero-color-primary-hover: #4338ca;
+  --hero-color-accent: #312e81;
+  --hero-color-text: #1e1b4b;
+  --hero-color-text-muted: #4338ca;
+  --hero-color-badge-bg: #c7d2fe;
+  --hero-color-surface: rgba(255, 255, 255, 0.7);
+  --hero-color-border: rgba(49, 46, 129, 0.22);
+
+  --hero-font: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --hero-radius: 1.25rem;
+
+  /* Fundo com gradiente e espaçamento generoso (item 4) */
+  background: linear-gradient(
+    160deg,
+    var(--hero-color-bg-1) 0%,
+    var(--hero-color-bg-2) 100%
+  );
+  color: var(--hero-color-text);
+  font-family: var(--hero-font);
+  padding: clamp(4rem, 12vh, 7rem) 1.25rem;
+}
+
+.hero__container {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+/* ---------- Conteúdo ---------- */
+
+.hero__eyebrow {
+  display: inline-block;
+  margin: 0 0 1.25rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 999px;
+  background: var(--hero-color-badge-bg);
+  color: var(--hero-color-accent);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 1.4rem + 3.4vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.hero__subtitle {
+  max-width: 34rem;
+  margin: 0 0 2rem;
+  font-size: clamp(1.0625rem, 0.98rem + 0.3vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--hero-color-text-muted);
+}
+
+/* ---------- Ações ---------- */
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem; /* alvo de toque confortável (item 7) */
+  width: 100%;
+  padding: 0.9rem 1.75rem;
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--hero-color-primary);
+  color: #ffffff;
+  box-shadow: 0 12px 24px -12px rgba(49, 46, 129, 0.55);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hero__cta:hover {
+  background: var(--hero-color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px -14px rgba(49, 46, 129, 0.6);
+}
+
+.hero__cta:active {
+  transform: translateY(0);
+}
+
+/* Segundo CTA discreto (item 2) */
+.hero__cta--secondary {
+  background: var(--hero-color-surface);
+  border: 1px solid var(--hero-color-border);
+  color: var(--hero-color-accent);
+  box-shadow: none;
+}
+
+.hero__cta--secondary:hover {
+  background: #ffffff;
+  border-color: var(--hero-color-accent);
+}
+
+/* Navegação por teclado visível (item 11) */
+.hero__cta:focus-visible {
+  outline: 3px solid var(--hero-color-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Mídia (placeholder já montado, item 5) ---------- */
+
+.hero__image,
+.hero__placeholder {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--hero-radius);
+}
+
+.hero__image {
+  box-shadow: 0 24px 48px -24px rgba(30, 27, 75, 0.35);
+}
+
+.hero__placeholder {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  border: 2px dashed rgba(79, 70, 229, 0.45);
+  background: var(--hero-color-surface);
+  color: rgba(67, 56, 202, 0.8);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Animações sutis de entrada (item 10) ---------- */
+
+.hero__eyebrow,
+.hero__title,
+.hero__subtitle,
+.hero__actions,
+.hero__media {
+  animation: hero-rise 0.65s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero__title {
+  animation-delay: 0.08s;
+}
+
+.hero__subtitle {
+  animation-delay: 0.16s;
+}
+
+.hero__actions {
+  animation-delay: 0.24s;
+}
+
+.hero__media {
+  animation-delay: 0.32s;
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__eyebrow,
+  .hero__title,
+  .hero__subtitle,
+  .hero__actions,
+  .hero__media {
+    animation: none;
+  }
+}
+
+/* ---------- Tablet em diante ---------- */
+
+@media (min-width: 40rem) {
+  .hero__actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero__cta {
+    width: auto;
+  }
+}
+
+/* ---------- Desktop: duas colunas (item 5) ---------- */
+
+@media (min-width: 56.25rem) {
+  .hero {
+    padding: clamp(5rem, 14vh, 8rem) 2rem;
+  }
+
+  .hero__container {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 4rem;
+  }
+
+  .hero__subtitle {
+    margin-bottom: 2.25rem;
+  }
+}
